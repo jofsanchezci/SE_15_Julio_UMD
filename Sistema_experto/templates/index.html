@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Sistema Experto de Salud</title>
+</head>
+<body>
+    <h1>Sistema Experto de Salud</h1>
+    <form method="post">
+        <label><input type="checkbox" name="sintomas" value="fiebre"> Fiebre</label><br>
+        <label><input type="checkbox" name="sintomas" value="tos"> Tos</label><br>
+        <label><input type="checkbox" name="sintomas" value="dolor_de_cabeza"> Dolor de cabeza</label><br>
+        <label><input type="checkbox" name="sintomas" value="dolor_de_estomago"> Dolor de estómago</label><br>
+        <label><input type="checkbox" name="sintomas" value="fatiga"> Fatiga</label><br>
+        <button type="submit">Diagnosticar</button>
+    </form>
+    {% if conclusiones %}
+        <h2>Conclusiones</h2>
+        <ul>
+            {% for hecho, accion in conclusiones %}
+                <li>Hecho: {{ hecho }} -> Acción: {{ accion }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html>
